@@ -17,11 +17,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //home: const SplashScreen(),
-      initialRoute: "/",
+      initialRoute: MainPage.route,//"/",
       routes: {
         "/": (context) => SplashScreen(),
         LoginPage.route: (context) => LoginPage(),
         RegisterPage.route: (context) => const RegisterPage(),
+        MainPage.route: (context) => const MainPage(),
       },
       debugShowCheckedModeBanner: false,
     );
