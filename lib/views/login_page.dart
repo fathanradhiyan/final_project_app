@@ -45,6 +45,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   ButtonLogin(
+                    onTap: () => Navigator.of(context).pushNamed(RegisterPage.route),
                     backgroundColor: Colors.white,
                     borderColor: R.colors.buttonBorder,
                     text: R.strings.loginGoogle,
@@ -53,6 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(height: 12,),
                   ButtonLogin(
+                    onTap: (){},
                     backgroundColor: Colors.black,
                     borderColor: Colors.black,
                     text: R.strings.loginApple,
@@ -69,40 +71,4 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-class ButtonLogin extends StatelessWidget {
-  const ButtonLogin({
-    Key? key, required this.backgroundColor, required this.borderColor, required this.text, required this.iconButton, required this.textColor,
-  }) : super(key: key);
 
-  final Color backgroundColor;
-  final Color borderColor;
-  final String text;
-  final String iconButton;
-  final Color textColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor,
-        elevation: 0,
-        fixedSize: const Size(double.infinity, 50),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
-          side: BorderSide(
-            color: borderColor
-          )
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(iconButton, width: 26,),
-          SizedBox(width: 12,),
-          Text(text, style: TextStyle(color: textColor, fontSize: 17, fontWeight: FontWeight.w500),),
-        ],
-      ),
-    );
-  }
-}

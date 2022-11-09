@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => SplashScreen(),
         LoginPage.route: (context) => LoginPage(),
+        RegisterPage.route: (context) => const RegisterPage(),
       },
       debugShowCheckedModeBanner: false,
     );

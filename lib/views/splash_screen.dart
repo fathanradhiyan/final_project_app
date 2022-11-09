@@ -6,8 +6,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 5), (){
-      Navigator.of(context).pushNamed(LoginPage.route);
+    Timer(const Duration(seconds: 5), () {
+      Navigator.of(context).pushReplacementNamed(LoginPage.route);
     });
 
     return Scaffold(
